@@ -1,7 +1,7 @@
 # FileStorageAPI
 ## Very short project description
-Java written API for file storage creation and manipulation.  
-API will be implemented to interact with local and remote file storage (Google Drive).
+Java written API for creating and manipulating with a file storage.
+API will be implemented to interact with a local and remote file storage (Google Drive).
 
 ## Deo za dve bekend vidre
 Joko ovaj readme cemo koristiti kao mini beleznicu kroz koju cemo da pratimo  
