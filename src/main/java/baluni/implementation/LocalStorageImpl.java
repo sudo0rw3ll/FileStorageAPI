@@ -8,6 +8,9 @@ import java.util.Scanner;
 
 public class LocalStorageImpl extends MyFileStorage {
 
+    // Treba da vidim sta da se radi kada hocu da dam svoju specifikaciju
+    // Da li da promptujem korisnika da unosi parametre
+    // Ili da da path do konfiguracije koju cu onda da premestim u storage folder
     @Override
     public boolean createStorage(String storagePath) {
         File file = new File(storagePath);
@@ -93,7 +96,13 @@ public class LocalStorageImpl extends MyFileStorage {
     @Override
     public boolean createDirectory(String destination, String creationPattern) {
         //mkdir C:\\Users\\Vid\\Desktop\\s{1..20}
-        String data[] = creationPattern.split("\\{");
+
+        if(!(new File(destination).exists() && new File(destination).isDirectory())){
+            System.out.println("Directory on this path doesn't exist");
+            return false;
+        }
+
+        String[] data = creationPattern.split("\\{");
 
         String fileName = data[0];
 
