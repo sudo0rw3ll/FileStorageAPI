@@ -16,6 +16,12 @@ Method | Google Drive | Local File Storage | Tested| Problem|
 -------|--------------|--------------------|-------|--------|
 createStorage()|:x:|:x:|:x:|:x:|
 
+**PROGRESS BAR**
+
+Datum|Vid|Joka
+-----|---|----
+30/10| |[x]Joka uradila GoogleOath2 :sparkles
+
 # Nedoumice i konsultacije
 Ovaj deo readme-a mozemo da iskoristimo za zapisivanje stvari koje nam nisu jasne  
 ili samo kao mini podsetnik za dalji rad.
