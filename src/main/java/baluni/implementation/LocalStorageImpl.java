@@ -92,10 +92,49 @@ public class LocalStorageImpl extends MyFileStorage {
 
     @Override
     public boolean createDirectory(String destination, String creationPattern) {
-        //mkdir C:\\Users\\Vid\\Desktop\\s{12..00}
+        //mkdir C:\\Users\\Vid\\Desktop\\s{1..20}
+        String data[] = creationPattern.split("\\{");
 
+        String fileName = data[0];
 
+        String[] range = data[1].split("\\.\\.");
 
-        return false;
+        int start_idx = -1;
+        int end_idx = -1;
+
+        try{
+            start_idx = Integer.parseInt(range[0]);
+            end_idx = Integer.parseInt(range[1].substring(0, range[1].length()-1));
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+            return false;
+        }
+
+        if(start_idx < 0 || end_idx < 0){
+            System.out.println("Please provide positive values for range");
+            return false;
+        }else{
+            System.out.println(start_idx + " " + end_idx);
+        }
+
+        for(int i=start_idx;i<=end_idx;i++){
+            File newDir = new File(destination+"\\"+fileName+i);
+
+            if(newDir.exists()){
+                System.out.println(fileName+i + " already exists");
+            }
+
+            if(newDir.exists()){
+                System.out.println(fileName+i + " already exists");
+                continue;
+            }
+
+            if(!newDir.mkdir()){
+                System.out.println("Couldn't create directory with name " + fileName+i);
+                return false;
+            }
+        }
+
+        return true;
     }
 }
