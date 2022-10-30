@@ -20,7 +20,7 @@ createStorage()|:x:|:x:|:x:|:x:|
 
 Datum|Vid|Joka
 -----|---|----
-30/10| |[:white_check_mark:]Joka uradila GoogleOath2 :sparkles
+30/10| |:white_check_mark: GoogleOath2 :sparkles:
 
 # Nedoumice i konsultacije
 Ovaj deo readme-a mozemo da iskoristimo za zapisivanje stvari koje nam nisu jasne  
