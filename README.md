@@ -15,6 +15,7 @@ daje malo stilah ;). Neka ideja jeste da koristimo ovu dole tabelu i da u svako 
 Method | Google Drive | Local File Storage | Tested| Problem|
 -------|--------------|--------------------|-------|--------|
 createStorage()|:x:|:white_check_mark:|:x:|:x:|
+createDirectory()|:x:|:construction_worker:|:x:|:x:|
 
 **PROGRESS BAR**
 
