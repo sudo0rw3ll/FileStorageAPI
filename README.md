@@ -17,11 +17,7 @@ Method | Google Drive | Local File Storage | Tested| Problem|
 createStorage()|:x:|:white_check_mark:|:x:|:x:|
 createDirectory()|:x:|:construction_worker:|:x:|:x:|
 
-**PROGRESS BAR**
 
-Datum|Vid|Joka
------|---|----
-30/10|:white_check_mark: createDirectory() :sparkles: |:white_check_mark: GoogleOath2 :sparkles:
 
 # Nedoumice i konsultacije
 Ovaj deo readme-a mozemo da iskoristimo za zapisivanje stvari koje nam nisu jasne  
