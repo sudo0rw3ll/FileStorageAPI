@@ -1,6 +1,7 @@
 package baluni.filestorage;
 
-import java.io.File;
+import baluni.model.Fajl;
+
 import java.util.List;
 
 public abstract class MyFileStorage {
@@ -35,7 +36,7 @@ public abstract class MyFileStorage {
      * Input parameter is a fileName (including extension).
      *
      * */
-    public abstract boolean createFile(String fileName);
+    public abstract boolean createFile(String path, String fileName);
 
     /** Method for file upload
      *
@@ -43,27 +44,21 @@ public abstract class MyFileStorage {
      *  be used for file upload and a list of files
      *  to be uploaded.
      * */
-    void fileUpload(String destination, List<File> files){
-        return;
-    }
+    public abstract void fileUpload(String destination, List<Fajl> files);
 
     /** Method for file deletion
      *
      *  Input parameter is a List of files
      *  to be deleted.
      * */
-    void deleteFiles(List<File> files){
-        return;
-    }
+    public abstract void deleteFiles(List<Fajl> files);
 
     /** Method for directory deletion
      *
      * Input parameter is a list of directories
      * to be deleted.
      */
-    void deleteDirectories(List<File> directories){
-        return;
-    }
+    public abstract void deleteDirectories(List<Fajl> directories);
 
     /** Method for moving files from source to destination
      *
@@ -73,9 +68,7 @@ public abstract class MyFileStorage {
      *  as a second argument.
      *
      * */
-    void moveFiles(String source, String destination){
-        return;
-    }
+    public abstract void moveFiles(String source, String destination);
 
     /** Method for content download
      *
@@ -84,9 +77,7 @@ public abstract class MyFileStorage {
      *  download or it's a path to the file we want to
      *  download.
      **/
-    void download(String destinationPath, String sourcePath){
-        return;
-    }
+    public abstract void download(String destinationPath, String sourcePath);
 
     /**Method fpr renaming files
      *
@@ -96,9 +87,7 @@ public abstract class MyFileStorage {
      * @param newFileName
      */
 
-    void rename(String oldFileName, String newFileName){
-        return;
-    }
+    public abstract boolean rename(String oldFileName, String newFileName);
 
     //pretrazivanje skladista
 
@@ -106,64 +95,43 @@ public abstract class MyFileStorage {
      * Input parameter is the name of the folder.
      *
      */
-    void listFilesInDir(String dirPath){
-        return;
-    }
+    public abstract List<Fajl> listFilesInDir(String dirPath);
 
     /**Method for listing all the files from all the folders
      * in a specfic folder
      * @param dirPath
      */
-    void listFilesInSubDir(String dirPath){
-        return;
-    }
+    public abstract List<Fajl> listFilesInSubDir(String dirPath);
 
     /**Method for listing all the files in a specific folder
      * and from it's subdirectories
      *
      * @param dirPath
      */
-    void listFiles(String dirPath){
-        return;
-    }
+    public abstract List<Fajl> listFiles(String dirPath);
 
     /**Method for listing all the files with a certain extention
      *
      * @param extention
      */
-    void listFilesForExtension(String extention){
-
-    }
+    public abstract List<Fajl> listFilesForExtension(String extention);
 
     /**Method for listing  files that contain  a string
      *
      * @param pattern
      */
-    void listFilesForName(String pattern){
-        return;
-    }
+    public abstract List<Fajl> listFilesForName(String pattern);
 
-    boolean listDirForNames(String dirPath, List<String> patterns){
-        return false;
-    }
+    public abstract List<Fajl> listDirForNames(String dirPath, List<String> patterns);
 
-    void findDirectoryOfFile(String fileName){
-        return;
-    }
+    public abstract Fajl findDirectoryOfFile(String fileName);
 
-    void sort(boolean byName, boolean creationDate, boolean dateModified,
-              boolean asc, boolean desc){
-        return;
-    }
+    public abstract void sort(boolean byName, boolean creationDate, boolean dateModified,
+              boolean asc, boolean desc);
 
-    void listFileByDate(){
-        return;
-    }
+    public abstract void listFileByDate();
 
-    void filterData(boolean byPath,boolean byName,boolean bySize,boolean byCreationDate
-    ,boolean byModificationDate, boolean byExtension){
-        return;
-    }
-
+    public abstract void filterData(boolean byPath,boolean byName,boolean bySize,boolean byCreationDate
+    ,boolean byModificationDate, boolean byExtension);
 
 }
