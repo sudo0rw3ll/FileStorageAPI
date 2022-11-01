@@ -5,7 +5,7 @@ import baluni.model.Fajl;
 import java.util.List;
 
 public abstract class MyFileStorage {
-
+    private StorageConfig storageConfig;
     /**
      * Method for file storage creation
      *
@@ -134,4 +134,7 @@ public abstract class MyFileStorage {
     public abstract void filterData(boolean byPath,boolean byName,boolean bySize,boolean byCreationDate
     ,boolean byModificationDate, boolean byExtension);
 
+    public StorageConfig getStorageConfig() {
+        return storageConfig;
+    }
 }

@@ -8,7 +8,7 @@ public class StorageConfig {
     private long defaultStorageSize;
     private int allowedNumberOfFiles;
     private List<String> forbiddenExtensions;
-
+    // Config builder
     public StorageConfig(String storageName, long defaultStorageSize, int allowedNumberOfFiles, List<String> forbiddenExtensions){
         this.storageName = storageName;
         this.defaultStorageSize = defaultStorageSize;
