@@ -131,9 +131,9 @@ public abstract class MyFileStorage {
     public abstract List<Fajl> sort(List<Fajl> fileList, boolean byName, boolean creationDate, boolean dateModified,
               boolean asc);
 
-    public abstract void listFileByDate(String date);
+    public abstract List<Fajl> listFileByDate(String date);
 
-    public abstract void listFilesBetweenDates(String startDate, String endDate);
+    public abstract List<Fajl> listFilesBetweenDates(String startDate, String endDate);
 
     public abstract List<Fajl> filterData(List<Fajl> fileList,boolean byPath,boolean byName,boolean bySize,boolean byCreationDate
     ,boolean byModificationDate, boolean byExtension);
