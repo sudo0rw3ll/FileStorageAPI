@@ -20,7 +20,7 @@ public class Fajl {
         this.fileSize = fileSize;
     }
 
-    public Fajl(String fileName, String extension,String path){
+    public Fajl(String fileName, String extension, String path){
         this.fileName = fileName;
         this.extension = extension;
         this.path = path;
