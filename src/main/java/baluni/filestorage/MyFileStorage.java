@@ -6,6 +6,7 @@ import java.util.List;
 
 public abstract class MyFileStorage {
     private StorageConfig storageConfig;
+    private String sotragePath;
     /**
      * Method for file storage creation
      *
@@ -122,19 +123,31 @@ public abstract class MyFileStorage {
      */
     public abstract List<Fajl> listFilesForName(String pattern);
 
-    public abstract List<Fajl> listDirForNames(String dirPath, List<String> patterns);
+    public abstract boolean listDirForNames(String dirPath, List<String> patterns);
 
     public abstract Fajl findDirectoryOfFile(String fileName);
 
-    public abstract void sort(boolean byName, boolean creationDate, boolean dateModified,
-              boolean asc, boolean desc);
+    public abstract List<Fajl> sort(List<Fajl> fileList, boolean byName, boolean creationDate, boolean dateModified,
+              boolean asc);
 
     public abstract void listFileByDate();
 
-    public abstract void filterData(boolean byPath,boolean byName,boolean bySize,boolean byCreationDate
+    public abstract List<Fajl> filterData(List<Fajl> fileList,boolean byPath,boolean byName,boolean bySize,boolean byCreationDate
     ,boolean byModificationDate, boolean byExtension);
 
     public StorageConfig getStorageConfig() {
         return storageConfig;
+    }
+
+    public String getSotragePath() {
+        return sotragePath;
+    }
+
+    public void setSotragePath(String sotragePath) {
+        this.sotragePath = sotragePath;
+    }
+
+    public void setStorageConfig(StorageConfig storageConfig) {
+        this.storageConfig = storageConfig;
     }
 }
