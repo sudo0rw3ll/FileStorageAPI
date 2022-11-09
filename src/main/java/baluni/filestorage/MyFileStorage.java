@@ -1,7 +1,9 @@
 package baluni.filestorage;
 
 import baluni.model.Fajl;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -73,6 +75,8 @@ public abstract class MyFileStorage {
      *
      * */
     public abstract void moveFiles(String source, String destination);
+
+    public abstract void moveFile(String filePath, String destination);
 
     /** Method for content download
      *
@@ -154,5 +158,40 @@ public abstract class MyFileStorage {
 
     public void setStorageConfig(StorageConfig storageConfig) {
         this.storageConfig = storageConfig;
+    }
+
+    public void readConfig(String configPath){
+        try{
+            ObjectMapper mapper = new ObjectMapper();
+
+            StorageConfig config = mapper.readValue(Paths.get(configPath).toFile(), StorageConfig.class);
+            System.out.println(config.getStorageName());
+
+            this.setStorageConfig(config);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void writeDefaultConfig(String filePath){
+        try{
+            StorageConfig defaultConfig = new StorageConfig();
+            this.setStorageConfig(defaultConfig);
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            mapper.writeValue(Paths.get(filePath).toFile(), defaultConfig);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void saveStorageConfig(String filePath){
+        try{
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.writeValue(Paths.get(filePath).toFile(), this.getStorageConfig());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -44,4 +44,12 @@
             <url>https://maven.pkg.github.com/sudo0rw3ll/FileStorageAPI</url>
         </repository>
     </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.14.0</version>
+        </dependency>
+    </dependencies>
 </project>
