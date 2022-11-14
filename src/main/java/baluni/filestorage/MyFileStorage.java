@@ -33,6 +33,9 @@ public abstract class MyFileStorage {
      * */
     public abstract boolean createDirectory(String destination, String creationPattern);
 
+    public abstract boolean createDir(String destination, String dirName);
+
+    public abstract boolean createDirectory(String path, String folderName, int allowedItems);
     /**
      * Method for file creation
      *
