@@ -31,7 +31,7 @@ public abstract class MyFileStorage {
      *      mkfolder x(1,10)
      *      mkfolder x 1:10
      * */
-    public abstract boolean createDirectory(String destination, String creationPattern);
+    public abstract boolean createDirectories(String destination, String creationPattern);
 
     public abstract boolean createDir(String destination, String dirName);
 
