@@ -79,7 +79,8 @@ public class Fajl {
 
     @Override
     public String toString(){
-        return "File " + this.fileName + "." + this.extension + " " + this.path;
+        return "File " + this.fileName + "." + this.extension + " " + this.path + " " + this.getCreationDate()
+                + " " + this.getModificationDate() + " " + this.getFileSize();
     }
 
     @Override
