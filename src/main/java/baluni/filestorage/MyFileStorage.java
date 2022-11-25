@@ -286,7 +286,7 @@ public abstract class MyFileStorage {
     public void saveStorageConfig(String filePath){
         try{
             ObjectMapper mapper = new ObjectMapper();
-            mapper.writeValue(Paths.get(filePath).toFile(), this.getStorageConfig());
+            mapper.writeValue(Paths.get(filePath + "\\" + "config.json").toFile(), this.getStorageConfig());
         }catch (Exception e){
             e.printStackTrace();
         }
